@@ -65,6 +65,7 @@ Current public infrastructure:
 | [Collective Fabric](https://github.com/pngen/Collective-Fabric) | Collective communication planning, topology, membership, execution authority, failure, recovery, and commit across distributed accelerator infrastructure. | Which collective should run, over what topology, under whose authority, and which result may become real? |
 | [RDMA Buffer](https://github.com/pngen/RDMA-Buffer) | Governed remote-access memory across registration, protection domains, access rights, leases, key generations, revocation, reuse, invalidation, and stale-authority fencing. | Which buffer is valid, who owns it, and is this remote operation still authorized to touch the memory? |
 | [Storage Fabric](https://github.com/pngen/Storage-Fabric) | AI-specific storage across object identity, tier placement, replicas, durability, integrity, movement, restore, eviction, capacity, and authority. | Where should AI state live, which copy is authoritative, and what must survive failure or restart? |
+| [Checkpoint Store](https://github.com/pngen/Checkpoint-Store) | Checkpoint storage, chunking, deduplication, integrity, retention, garbage collection, replica authority, restore, and recovery. | Which checkpoint bytes exist, which chunks are shared, what may be reclaimed, and what can safely be restored? |
 
 The portfolio is designed as a cumulative accelerated-computing substrate.
 
