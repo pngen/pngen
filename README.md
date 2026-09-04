@@ -67,6 +67,7 @@ Current public infrastructure:
 | [Storage Fabric](https://github.com/pngen/Storage-Fabric) | AI-specific storage across object identity, tier placement, replicas, durability, integrity, movement, restore, eviction, capacity, and authority. | Where should AI state live, which copy is authoritative, and what must survive failure or restart? |
 | [Checkpoint Store](https://github.com/pngen/Checkpoint-Store) | Checkpoint storage, chunking, deduplication, integrity, retention, garbage collection, replica authority, restore, and recovery. | Which checkpoint bytes exist, which chunks are shared, what may be reclaimed, and what can safely be restored? |
 | [State Index](https://github.com/pngen/State-Index) | Governed indexing and retrieval of reusable AI state across identity, generation, location, compatibility, provenance, dependencies, freshness, authority, and retrieval cost. | What reusable state exists, which generation is current, where does each usable copy live, and which candidate is safe and worthwhile to reuse now? |
+| [Distributed Cache Directory](https://github.com/pngen/Distributed-Cache-Directory) | Authoritative discovery and governance of reusable distributed AI state across caches, replicas, locations, workers, devices, and generations. | Which reusable copy exists now, where is it, which generation is current, and which location is trustworthy enough to reuse? |
 
 The portfolio is designed as a cumulative accelerated-computing substrate.
 
