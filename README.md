@@ -66,6 +66,7 @@ Current public infrastructure:
 | [RDMA Buffer](https://github.com/pngen/RDMA-Buffer) | Governed remote-access memory across registration, protection domains, access rights, leases, key generations, revocation, reuse, invalidation, and stale-authority fencing. | Which buffer is valid, who owns it, and is this remote operation still authorized to touch the memory? |
 | [Storage Fabric](https://github.com/pngen/Storage-Fabric) | AI-specific storage across object identity, tier placement, replicas, durability, integrity, movement, restore, eviction, capacity, and authority. | Where should AI state live, which copy is authoritative, and what must survive failure or restart? |
 | [Checkpoint Store](https://github.com/pngen/Checkpoint-Store) | Checkpoint storage, chunking, deduplication, integrity, retention, garbage collection, replica authority, restore, and recovery. | Which checkpoint bytes exist, which chunks are shared, what may be reclaimed, and what can safely be restored? |
+| [State Index](https://github.com/pngen/State-Index) | Governed indexing and retrieval of reusable AI state across identity, generation, location, compatibility, provenance, dependencies, freshness, authority, and retrieval cost. | What reusable state exists, which generation is current, where does each usable copy live, and which candidate is safe and worthwhile to reuse now? |
 
 The portfolio is designed as a cumulative accelerated-computing substrate.
 
