@@ -68,6 +68,7 @@ Current public infrastructure:
 | [Checkpoint Store](https://github.com/pngen/Checkpoint-Store) | Checkpoint storage, chunking, deduplication, integrity, retention, garbage collection, replica authority, restore, and recovery. | Which checkpoint bytes exist, which chunks are shared, what may be reclaimed, and what can safely be restored? |
 | [State Index](https://github.com/pngen/State-Index) | Governed indexing and retrieval of reusable AI state across identity, generation, location, compatibility, provenance, dependencies, freshness, authority, and retrieval cost. | What reusable state exists, which generation is current, where does each usable copy live, and which candidate is safe and worthwhile to reuse now? |
 | [Distributed Cache Directory](https://github.com/pngen/Distributed-Cache-Directory) | Authoritative discovery and governance of reusable distributed AI state across caches, replicas, locations, workers, devices, and generations. | Which reusable copy exists now, where is it, which generation is current, and which location is trustworthy enough to reuse? |
+| [Runtime Registry](https://github.com/pngen/Runtime-Registry) | Governed discovery and authority for live services, runtimes, endpoints, protocols, capabilities, devices, workers, and generations across distributed AI infrastructure. | What runtime or service is available now, what can it do, how may it be reached, and which instance is still authoritative? |
 
 The portfolio is designed as a cumulative accelerated-computing substrate.
 
