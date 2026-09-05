@@ -2,7 +2,7 @@
 
 Chief AI Architect and Founder of Summon Software Labs, building open-source AI accelerator infrastructure and runtime systems.
 
-My work focuses on converting expensive private AI infrastructure into explicit, vendor-neutral runtime boundaries across memory, reusable state, execution, inference, compilation, caching, movement, recovery, authority, resource governance, and observability.
+My work focuses on converting complex private AI infrastructure into explicit, vendor-neutral runtime boundaries across memory, reusable state, execution, inference, compilation, caching, movement, recovery, authority, resource governance, and observability.
 
 ## Open Source AI Accelerator Infrastructure
 
