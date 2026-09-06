@@ -74,6 +74,7 @@ Current public infrastructure:
 | [Workload Fabric](https://github.com/pngen/Workload-Fabric) | Durable workload identity, lifecycle, progress, suspension, migration, recovery, completion, failure, supersession, and retirement across changing execution attempts and worker generations. | What workload exists, which generation is current, what lifecycle state is authoritative now, and which transitions remain valid as execution, suspension, migration, recovery, failure, cancellation, and completion occur? |
 | [Dependency Fabric](https://github.com/pngen/Dependency-Fabric) | Dependency identity, generation authority, readiness, invalidation, and recovery across AI infrastructure. | What does this work depend on, and are those dependencies authoritative and ready now? |
 | [Preemption Fabric](https://github.com/pngen/Preemption-Fabric) | Safe interruption, state preservation, resource release, and authoritative resume of accelerator work. | Can this work be interrupted safely now, and under what conditions may it resume? |
+| [Reservation Fabric](https://github.com/pngen/Reservation-Fabric) | Advance reservation of compute, accelerator memory, host memory, bandwidth, residency, and network capacity. | What future capacity has been promised, and can that promise still be honored? |
 
 The portfolio is designed as a cumulative accelerated-computing substrate.
 
