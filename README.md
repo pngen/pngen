@@ -73,6 +73,7 @@ Current public infrastructure:
 | [Execution Fabric](https://github.com/pngen/Execution-Fabric) | Authoritative execution attempts, ownership, progress, retry, fencing, recovery, and exactly-once logical commit across distributed AI infrastructure. | Which execution attempt is authoritative now, who owns it, what may still run, and which completion may commit? |
 | [Workload Fabric](https://github.com/pngen/Workload-Fabric) | Durable workload identity, lifecycle, progress, suspension, migration, recovery, completion, failure, supersession, and retirement across changing execution attempts and worker generations. | What workload exists, which generation is current, what lifecycle state is authoritative now, and which transitions remain valid as execution, suspension, migration, recovery, failure, cancellation, and completion occur? |
 | [Dependency Fabric](https://github.com/pngen/Dependency-Fabric) | Dependency identity, generation authority, readiness, invalidation, and recovery across AI infrastructure. | What does this work depend on, and are those dependencies authoritative and ready now? |
+| [Preemption Fabric](https://github.com/pngen/Preemption-Fabric) | Safe interruption, state preservation, resource release, and authoritative resume of accelerator work. | Can this work be interrupted safely now, and under what conditions may it resume? |
 
 The portfolio is designed as a cumulative accelerated-computing substrate.
 
