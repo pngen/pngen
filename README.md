@@ -75,6 +75,7 @@ Current public infrastructure:
 | [Dependency Fabric](https://github.com/pngen/Dependency-Fabric) | Dependency identity, generation authority, readiness, invalidation, and recovery across AI infrastructure. | What does this work depend on, and are those dependencies authoritative and ready now? |
 | [Preemption Fabric](https://github.com/pngen/Preemption-Fabric) | Safe interruption, state preservation, resource release, and authoritative resume of accelerator work. | Can this work be interrupted safely now, and under what conditions may it resume? |
 | [Reservation Fabric](https://github.com/pngen/Reservation-Fabric) | Advance reservation of compute, accelerator memory, host memory, bandwidth, residency, and network capacity. | What future capacity has been promised, and can that promise still be honored? |
+| [Capacity Fabric](https://github.com/pngen/Capacity-Fabric) | Current, generation-aware accelerator capacity modeling across devices, memory, topology, reservations, fragmentation, and execution authority. | Can this infrastructure actually fit and execute the requested work now? |
 
 The portfolio is designed as a cumulative accelerated-computing substrate.
 
