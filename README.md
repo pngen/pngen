@@ -76,6 +76,7 @@ Current public infrastructure:
 | [Preemption Fabric](https://github.com/pngen/Preemption-Fabric) | Safe interruption, state preservation, resource release, and authoritative resume of accelerator work. | Can this work be interrupted safely now, and under what conditions may it resume? |
 | [Reservation Fabric](https://github.com/pngen/Reservation-Fabric) | Advance reservation of compute, accelerator memory, host memory, bandwidth, residency, and network capacity. | What future capacity has been promised, and can that promise still be honored? |
 | [Capacity Fabric](https://github.com/pngen/Capacity-Fabric) | Current, generation-aware accelerator capacity modeling across devices, memory, topology, reservations, fragmentation, and execution authority. | Can this infrastructure actually fit and execute the requested work now? |
+| [Fragmentation Governor](https://github.com/pngen/Fragmentation-Governor) | Accelerator-memory fragmentation detection, fit analysis, remediation planning, revalidation, and execution authority. | When enough memory exists in aggregate but useful work still cannot fit, what fragmentation is present and what remediation is justified? |
 
 The portfolio is designed as a cumulative accelerated-computing substrate.
 
