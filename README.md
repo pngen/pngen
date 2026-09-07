@@ -77,6 +77,7 @@ Current public infrastructure:
 | [Reservation Fabric](https://github.com/pngen/Reservation-Fabric) | Advance reservation of compute, accelerator memory, host memory, bandwidth, residency, and network capacity. | What future capacity has been promised, and can that promise still be honored? |
 | [Capacity Fabric](https://github.com/pngen/Capacity-Fabric) | Current, generation-aware accelerator capacity modeling across devices, memory, topology, reservations, fragmentation, and execution authority. | Can this infrastructure actually fit and execute the requested work now? |
 | [Fragmentation Governor](https://github.com/pngen/Fragmentation-Governor) | Accelerator-memory fragmentation detection, fit analysis, remediation planning, revalidation, and execution authority. | When enough memory exists in aggregate but useful work still cannot fit, what fragmentation is present and what remediation is justified? |
+| [Congestion Fabric](https://github.com/pngen/Congestion-Fabric) | Live congestion, queue/backlog state, residual bandwidth, bottleneck attribution, fairness, backpressure, and generation-bound traffic authority across accelerator, host-memory, PCIe, network, storage, and collective domains | Where is infrastructure traffic congested now, which flows and resource generations are causing it, how much useful capacity remains, and what bounded action should callers take? |
 
 The portfolio is designed as a cumulative accelerated-computing substrate.
 
