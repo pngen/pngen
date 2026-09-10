@@ -1,6 +1,6 @@
 # Paul Ngen
 
-Chief AI Architect and Founder of Summon Software Labs, building open-source AI accelerator infrastructure and runtime systems.
+Chief Architect and Founder of Summon Software Labs, building open-source AI accelerator infrastructure and runtime systems.
 
 My work focuses on converting complex private AI infrastructure into explicit, vendor-neutral runtime boundaries across memory, reusable state, execution, inference, compilation, caching, movement, recovery, authority, resource governance, and observability.
 
@@ -95,6 +95,7 @@ Current public infrastructure:
 | [NVLink Fabric](https://github.com/pngen/NVLink-Fabric) | NVLink-class accelerator connectivity discovery, topology modeling, measurement, path quality, generation-bound evidence, deterministic routing, and route authority. | Which accelerator paths exist now, what quality of connectivity do they provide, and is the evidence still authoritative enough to route work through them? |
 | [NVSwitch Fabric](https://github.com/pngen/NVSwitch-Fabric) | NVSwitch-class accelerator switching-fabric discovery, topology/partition modeling, reachability, path health, failure-domain handling, deterministic routing, and generation-bound route authority. | What switched accelerator fabric exists now, which paths remain reachable and healthy, and is the current evidence authoritative enough to use? |
 | [GPU Direct Fabric](https://github.com/pngen/GPU-Direct-Fabric) | Accelerator direct-path eligibility, registration authority, fallback selection, transfer lifecycle, and stale-state fencing. | Can this data move directly between accelerator memory and its destination now — and under what authority? |
+| [NIC Residency](https://github.com/pngen/NIC-Residency) | NIC, SmartNIC, and DPU residency and locality across accelerator infrastructure, including PCIe/NUMA/GPU affinity, attachment, ownership, generations, and evidence freshness. | Which NIC-side resource is resident where, what is it local to, and is that residency evidence still authoritative enough to use? |
 
 The portfolio is designed as a cumulative accelerated-computing substrate.
 
