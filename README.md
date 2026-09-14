@@ -1,21 +1,40 @@
 # Paul Ngen
 
-Chief Architect and Founder of Summon Software Labs, building open-source AI accelerator infrastructure and runtime systems.
+Founder and Chief Architect of Summon Software Labs, building open-source accelerated-computing infrastructure, runtime systems, and AI systems architecture.
 
-My work focuses on converting complex private AI infrastructure into explicit, vendor-neutral runtime boundaries across memory, reusable state, execution, inference, compilation, caching, movement, recovery, authority, resource governance, and observability.
+My work focuses on decomposing complex accelerated infrastructure into explicit, vendor-neutral runtime boundaries with deterministic ownership, authority, lifecycle, recovery, provenance, and evidence.
 
-## Open Source AI Accelerator Infrastructure
+The architecture spans accelerator memory, reusable computational state, inference serving, execution, compilation, communication, storage, topology, resource governance, observability, disaggregation, rack and cluster infrastructure, autonomous systems, heterogeneous accelerator federation, coherence, virtualization, persistent execution, fault containment, cross-cluster state, lifecycle management, runtime evolution, and hardware capability truth.
 
-Summon Software Labs develops an expanding open-source accelerator infrastructure portfolio for heterogeneous AI systems.
+## Open Source Accelerated Systems Infrastructure
 
-The portfolio spans memory, reusable computational state, inference serving, execution placement, compilation, kernel and graph reuse, resource governance, distributed authority, recovery, communication, and observability.
+Summon Software Labs develops an open-source accelerated-computing substrate for heterogeneous AI and high-performance systems.
 
-The architecture is intentionally decomposed.
+The portfolio is intentionally cumulative.
 
-Each runtime owns a specific systems boundary rather than collapsing memory, state, execution, movement, recovery, scheduling, caching, and policy into one monolithic framework.
+It begins with memory residency, reusable state, movement, topology, pressure, caching, and observability; expands into inference serving, execution authority, scheduling, placement, communication, recovery, resource economics, storage, fleet state, and platform infrastructure; continues through physical interconnect, disaggregation, rack and cluster composition; adds autonomous-agent and research infrastructure; and culminates in federation, coherence, virtualization, persistent execution, compiler-runtime authority, fault containment, cross-cluster state, lifecycle evolution, and hardware capability registry semantics.
+
+Each runtime owns one explicit systems boundary.
+
+Memory does not silently own scheduling. Scheduling does not silently own authority. Completion does not imply commit. Discovery does not imply capability. A cache hit does not imply reuse eligibility. A process exit does not imply authoritative output. A replica does not imply currency. A hardware fact does not imply freshness.
+
+The architecture separates these concerns so that every transition can be governed, tested, fenced, replayed, recovered, and explained independently.
+
+Rather than collapsing accelerator infrastructure into one monolithic framework, the system is composed from narrowly scoped runtimes that can be integrated individually or assembled into a larger accelerated-computing architecture.
+
+The portfolio is organized into seven natural architectural waves:
+
+- foundational runtime and memory primitives
+- memory infrastructure and observability
+- inference, serving, and platform infrastructure
+- execution, capacity, and runtime governance
+- interconnect, disaggregation, and cluster infrastructure
+- autonomous research and agent infrastructure
+- federation, authority, and runtime evolution
 
 Current public infrastructure:
 
+## Foundational Runtime & Memory Primitives
 | # | Runtime | Systems boundary | Core question |
 | ---: | --- | --- | --- |
 | 1 | [FlashTier](https://github.com/pngen/FlashTier) | Heterogeneous accelerator-memory residency across device memory, pinned host memory, and NVMe. | Where do the bytes live? |
@@ -24,6 +43,10 @@ Current public infrastructure:
 | 4 | [Reclaim Fabric](https://github.com/pngen/Reclaim-Fabric) | Economic reclamation of reusable machine state. | What state is still worth keeping? |
 | 5 | [Checkpoint Fabric](https://github.com/pngen/Checkpoint-Fabric) | Coherent checkpointing, persistence, restore, migration, rollback, lineage, fencing, and crash recovery. | What execution state must survive? |
 | 6 | [KV Fabric](https://github.com/pngen/KV-Fabric) | Distributed reusable KV and prefix inference state. | Where should reusable inference state live, when should it move, who may use it, and when is reuse cheaper than recomputation? |
+
+## Memory Infrastructure & Observability
+| # | Runtime | Systems boundary | Core question |
+| ---: | --- | --- | --- |
 | 7 | [Tensor Cache](https://github.com/pngen/Tensor-Cache) | Reusable tensor-shaped computational state across accelerator, host, storage, process, and execution boundaries. | Where should reusable tensor state live, when should it move, when should it be reused, and when is reconstruction cheaper than retention or transfer? |
 | 8 | [Unified Buffer](https://github.com/pngen/Unified-Buffer) | Buffer allocation, identity, ownership, residency, pooling, reuse, sharing, and movement across heterogeneous memory domains. | What should a buffer mean when memory is no longer one place? |
 | 9 | [Transfer Fabric](https://github.com/pngen/Transfer-Fabric) | Planning, routing, staging, scheduling, overlapping, verifying, and governing data movement. | How should bytes move? |
@@ -33,6 +56,10 @@ Current public infrastructure:
 | 13 | [Model Cache](https://github.com/pngen/Model-Cache) | Caching, validation, versioning, persistence, integrity, deduplication, dependencies, and reuse of model artifacts. | What reusable model artifact already exists for this exact requirement, is it valid, and should we reuse it instead of rebuilding or reacquiring it? |
 | 14 | [Allocator Lab](https://github.com/pngen/Allocator-Lab) | Designing, benchmarking, stress-testing, replaying, and comparing memory allocators. | How should memory allocation strategies be measured, compared, stressed, and understood before one of them is trusted inside serious AI infrastructure? |
 | 15 | [Memory Observatory](https://github.com/pngen/Memory-Observatory) | Measurement, correlation, explanation, replay, provenance, and diagnostics for heterogeneous memory behavior. | What is memory doing across the system, why is it behaving that way, and what evidence explains how that behavior changed over time? |
+
+## Inference, Serving & Platform Infrastructure
+| # | Runtime | Systems boundary | Core question |
+| ---: | --- | --- | --- |
 | 16 | [Inference Scheduler](https://github.com/pngen/Inference-Scheduler) | Admission, queueing, batching, fairness, deadlines, phase coordination, backpressure, retries, cancellation, and accelerator-aware dispatch. | What inference work should run next, where should it run, and under what latency, fairness, capacity, batching, and execution constraints? |
 | 17 | [Batch Fabric](https://github.com/pngen/Batch-Fabric) | Dynamic inference batching, compatibility-aware grouping, latency-bounded formation, splitting, merging, fairness, and cancellation. | Which inference requests should execute together, when should a batch seal, and when is waiting for a larger batch no longer worth the latency cost? |
 | 18 | [Prefill Fabric](https://github.com/pngen/Prefill-Fabric) | Scheduling, packing, partitioning, executing, and governing prompt-prefill work. | How should prompt-prefill work be formed, scheduled, partitioned, executed, and governed so large and heterogeneous prompts make progress without destroying latency, fairness, memory headroom, or downstream serving capacity? |
@@ -71,6 +98,10 @@ Current public infrastructure:
 | 51 | [Distributed Cache Directory](https://github.com/pngen/Distributed-Cache-Directory) | Authoritative discovery and governance of reusable distributed AI state across caches, replicas, locations, workers, devices, and generations. | Which reusable copy exists now, where is it, which generation is current, and which location is trustworthy enough to reuse? |
 | 52 | [Runtime Registry](https://github.com/pngen/Runtime-Registry) | Governed discovery and authority for live services, runtimes, endpoints, protocols, capabilities, devices, workers, and generations across distributed AI infrastructure. | What runtime or service is available now, what can it do, how may it be reached, and which instance is still authoritative? |
 | 53 | [Resource Broker](https://github.com/pngen/Resource-Broker) | Governed reservation, arbitration, leasing, reclamation, and accounting of scarce compute, accelerator-memory, host-memory, pinned-memory, transfer, storage, and other constrained infrastructure resources. | What capacity exists, who may reserve it, what is actually allocated, what may be reclaimed, and which resource claim is authoritative now? |
+
+## Execution, Capacity & Runtime Governance
+| # | Runtime | Systems boundary | Core question |
+| ---: | --- | --- | --- |
 | 54 | [Execution Fabric](https://github.com/pngen/Execution-Fabric) | Authoritative execution attempts, ownership, progress, retry, fencing, recovery, and exactly-once logical commit across distributed AI infrastructure. | Which execution attempt is authoritative now, who owns it, what may still run, and which completion may commit? |
 | 55 | [Workload Fabric](https://github.com/pngen/Workload-Fabric) | Durable workload identity, lifecycle, progress, suspension, migration, recovery, completion, failure, supersession, and retirement across changing execution attempts and worker generations. | What workload exists, which generation is current, what lifecycle state is authoritative now, and which transitions remain valid as execution, suspension, migration, recovery, failure, cancellation, and completion occur? |
 | 56 | [Dependency Fabric](https://github.com/pngen/Dependency-Fabric) | Dependency identity, generation authority, readiness, invalidation, and recovery across AI infrastructure. | What does this work depend on, and are those dependencies authoritative and ready now? |
@@ -93,6 +124,10 @@ Current public infrastructure:
 | 73 | [Utilization Observatory](https://github.com/pngen/Utilization-Observatory) | Accelerator-capacity observability across compute busy/idle, useful vs non-useful work, waiting, transfers, reservations, residency, fragmentation, fencing, unavailable capacity, memory occupancy, freshness, provenance, and historical timelines. | How much capacity is actively executing, waiting, transferring, reserved, resident, fragmented, fenced, unavailable, or unknown — and how much of the busy time is actually useful? |
 | 74 | [Interference Observatory](https://github.com/pngen/Interference-Observatory) | Cross-workload accelerator interference observability across shared compute, cache, memory bandwidth, PCIe/transfer paths, collectives, NUMA, storage, and related resources. | When one workload slows down while sharing infrastructure with another, what measurable interference exists, how strong is the evidence, which resource domain is implicated, and what remains unknown? |
 | 75 | [Contention Governor](https://github.com/pngen/Contention-Governor) | Active cross-workload accelerator contention control using interference evidence, policy, SLOs, workload value, fairness, cost constraints, deterministic intervention ranking, and generation-fenced enforcement. | Once interference is established, which workload should yield, by how much, through which legal intervention, under whose authority, and how do we prove the action actually improved the system rather than simply moving the problem elsewhere? |
+
+## Interconnect, Disaggregation & Cluster Infrastructure
+| # | Runtime | Systems boundary | Core question |
+| ---: | --- | --- | --- |
 | 76 | [NVLink Fabric](https://github.com/pngen/NVLink-Fabric) | NVLink-class accelerator connectivity discovery, topology modeling, measurement, path quality, generation-bound evidence, deterministic routing, and route authority. | Which accelerator paths exist now, what quality of connectivity do they provide, and is the evidence still authoritative enough to route work through them? |
 | 77 | [NVSwitch Fabric](https://github.com/pngen/NVSwitch-Fabric) | NVSwitch-class accelerator switching-fabric discovery, topology/partition modeling, reachability, path health, failure-domain handling, deterministic routing, and generation-bound route authority. | What switched accelerator fabric exists now, which paths remain reachable and healthy, and is the current evidence authoritative enough to use? |
 | 78 | [GPU Direct Fabric](https://github.com/pngen/GPU-Direct-Fabric) | Accelerator direct-path eligibility, registration authority, fallback selection, transfer lifecycle, and stale-state fencing. | Can this data move directly between accelerator memory and its destination now — and under what authority? |
@@ -104,6 +139,10 @@ Current public infrastructure:
 | 84 | [Disaggregation Fabric](https://github.com/pngen/Disaggregation-Fabric) | Graph-based composition of physically separated compute, accelerator, memory, storage, and network resources into generation-bound authoritative execution sets with atomic reservation, path/locality/capability constraints, stale-state fencing, failure invalidation, recomposition, and conservative restart recovery. | Which combination of disaggregated resources remains jointly feasible and authoritative now, and when must that composition be invalidated and recomposed because any required resource, path, generation, evidence, reservation, or authority changed? |
 | 85 | [Rack Fabric](https://github.com/pngen/Rack-Fabric) | Authoritative rack-scale inventory, topology, evidence, lifecycle, failure-domain, persistence, and mutation authority | What is in this rack now, how is it arranged, what evidence supports that state, and which process is still authorized to change it? |
 | 86 | [Cluster Fabric](https://github.com/pngen/Cluster-Fabric) | Authoritative cluster composition across racks, inter-rack connectivity, placement/capacity/failure domains, topology epochs, lifecycle, persistence, and distributed infrastructure authority | What racks and cluster-level infrastructure constitute this cluster now, how are they related, which topology and failure domains are authoritative, and which cluster generation may safely be consumed by higher-level runtimes? |
+
+## Autonomous Research & Agent Infrastructure
+| # | Runtime | Systems boundary | Core question |
+| ---: | --- | --- | --- |
 | 87 | [Agent Scheduler](https://github.com/pngen/Agent-Scheduler) | Scheduling authority over persistent autonomous workers across capability, policy, resource, budget, locality, fairness, health, generation, and lifecycle constraints. | Which persistent autonomous agent should own this work now — under capability, policy, resource, budget, locality, fairness, health, and authority constraints — and which assignment stays authoritative as agents restart, disappear, recover, or are superseded? |
 | 88 | [Agent Runtime](https://github.com/pngen/Agent-Runtime) | Long-running autonomous-agent execution across model calls, tools, memory bindings, checkpoints, retries, budgets, interruption, recovery, side-effect semantics, and generation-bound action authority. | What may this autonomous agent do next, under which current authority — and how does execution survive retries, process death, restart, and recovery without stale actions, duplicate side effects, or invalid state becoming authoritative? |
 | 89 | [Model Router](https://github.com/pngen/Model-Router) | Deterministic policy-, capability-, cost-, availability-, latency-, locality-, compatibility-, health-, and authority-aware routing across heterogeneous AI models and inference backends. | Which model/backend is the deterministic legal target for this request now — and when must that route be rejected, deferred, invalidated, rerouted, or superseded? |
@@ -114,6 +153,10 @@ Current public infrastructure:
 | 94 | [Research Ledger](https://github.com/pngen/Research-Ledger) | Authoritative provenance, lineage, append-only history, evidence accounting, decision reconstruction, and stale-authority fencing across autonomous research. | What happened during this research process, which hypotheses, experiments, calls, artifacts, failures and decisions produced each result, what did it consume, and can every accepted result still be reconstructed from evidence? |
 | 95 | [Artifact Promotion](https://github.com/pngen/Artifact-Promotion) | Generation-fenced lifecycle promotion authority across artifact revisions, evidence, policy generations, quarantine, trust transitions, and commit eligibility. | Who may move an artifact forward, under which policy, and on whose authority? |
 | 96 | [Autonomous Foundry](https://github.com/pngen/Autonomous-Foundry) | Durable generation-fenced authority over dispatched autonomous work, attempts, worker incarnations, candidate evaluation, ambiguous outcomes, recovery, and handoff receipts. | When work crosses a process boundary, who owns the authority over what happened to it? |
+
+## Federation, Authority & Runtime Evolution
+| # | Runtime | Systems boundary | Core question |
+| ---: | --- | --- | --- |
 | 97 | [Heterogeneous Accelerator Federation](https://github.com/pngen/Heterogeneous-Accelerator-Federation) | Generation-bound federation of heterogeneous accelerators across vendors, architectures, runtime stacks, capabilities, compatibility, portability, and migration authority. | How can CUDA, ROCm, and other accelerator fleets join one execution federation without erasing the capability, compatibility, portability, and authority differences that decide whether work can run? |
 | 98 | [Coherence Fabric](https://github.com/pngen/Coherence-Fabric) | Generation-bound coherence, consistency, ownership, invalidation, synchronization, and read/write authority across accelerator, host, CXL-class, and distributed memory. | When one logical state may exist in several memory domains, which copy is authoritative, which copies are current, what synchronization is required, and who may still change or observe it? |
 | 99 | [Accelerator Virtualization](https://github.com/pngen/Accelerator-Virtualization) | Stable virtual accelerator identity, tenancy, isolation, backing replacement, migration, and generation-bound authority over changing physical accelerators. | How can workloads use stable virtual device identities while the devices and the authority behind them change? |
@@ -122,9 +165,78 @@ Current public infrastructure:
 | 102 | [Compiler Runtime Fabric](https://github.com/pngen/Compiler-Runtime-Fabric) | Generation-bound compiler execution authority across sessions, phases, toolchains, diagnostics, retries, recovery, validated outputs, and local provenance. | What compiler work may execute now, under which toolchain, target, environment, phase, and authority generations, and how do we stop crashes, retries, or stale subprocesses from becoming authoritative state? |
 | 103 | [Fault Containment Fabric](https://github.com/pngen/Fault-Containment-Fabric) | Generation-bound fault-containment authority across failure domains, blast-radius computation, fencing, propagation control, degraded operation, and restart-surviving containment state. | When accelerator infrastructure becomes faulty or unsafe, what is the smallest authoritative blast radius that must be isolated, what must be fenced with it, what work may continue, and what degraded mode stays legally operable without allowing propagation? |
 
-The portfolio is designed as a cumulative accelerated-computing substrate.
+## Architecture
 
-Each runtime exposes infrastructure that serious AI operators would otherwise need to design, integrate, harden, validate, and maintain independently.
+The portfolio is designed as a cumulative accelerated-computing substrate rather than a collection of independent utilities.
+
+Lower-level runtimes establish identity, ownership, memory, state, topology, capability, and evidence. Higher-level runtimes consume those boundaries to govern execution, placement, communication, recovery, infrastructure composition, autonomous work, federation, coherence, lifecycle, and evolution.
+
+Authority is explicit throughout the architecture.
+
+A decision remains valid only while the identities, generations, capabilities, evidence, topology, policy, ownership, and other conditions that justified it remain current. When those conditions change, stale authority is fenced rather than silently inherited.
+
+This allows the architecture to distinguish states that conventional infrastructure often conflates:
+
+- produced versus authoritative
+- available versus eligible
+- healthy versus permitted
+- resident versus current
+- replicated versus authoritative
+- completed versus committed
+- discovered versus verified
+- recoverable versus recovered
+- reachable versus usable
+- compatible versus portable
+- persistent versus resumable
+- contained versus healthy
+- observed versus proven
+
+Each runtime therefore exposes infrastructure that serious AI and accelerated-computing operators would otherwise need to design, integrate, harden, validate, and maintain independently.
+
+Together, the runtimes form a layered systems architecture spanning individual accelerator memory regions through distributed execution, physical infrastructure, autonomous systems, heterogeneous federation, and runtime evolution.
+
+## Accelerated Systems Engineering
+
+Primary areas of work include:
+
+- heterogeneous accelerator architecture
+- accelerator memory residency, allocation, reclamation, compaction, and pressure
+- reusable computational state, KV state, tensor state, prefixes, artifacts, and caches
+- inference scheduling, batching, prefill, decode, speculation, and serving
+- execution identity, ownership, retries, fencing, preemption, persistence, and recovery
+- distributed placement, capacity, reservations, fragmentation, congestion, and contention
+- compilation, compiler-runtime execution, specialization, executable artifacts, and provenance
+- kernel and execution-graph reuse
+- data movement, transfer planning, bandwidth governance, and transport offload
+- PCIe, NUMA, NVLink-class, NVSwitch-class, RDMA, direct-path, NIC, DPU, and CXL-class infrastructure
+- collective communication planning and scheduling
+- storage, checkpointing, distributed cache directories, state indexing, and runtime discovery
+- model and engine residency
+- replica lifecycle, failover, recovery planning, and degraded operation
+- accelerator health, power, energy, and thermal governance
+- GPU fleet state and hardware capability discovery
+- disaggregated compute, memory, storage, networking, and accelerator composition
+- rack-scale and cluster-scale infrastructure
+- autonomous-agent scheduling and execution
+- model routing, ensembles, critics, experiments, lab scheduling, and autonomous research
+- artifact promotion, provenance, research lineage, and durable evidence
+- heterogeneous accelerator federation across vendors, architectures, and runtime stacks
+- coherence, consistency, ownership, invalidation, synchronization, and read/write authority
+- accelerator virtualization, tenancy, backing replacement, and partitioning
+- persistent and resumable execution
+- distributed compilation and compiler phase authority
+- failure-containment domains and authoritative blast-radius computation
+- cross-cluster state, federation, migration, and reusable-state authority
+- model lifecycle, rollout, rollback, retirement, and compatibility
+- live runtime evolution across protocol and implementation generations
+- hardware capability registries, evidence precision, support states, and capability truth
+- deterministic lifecycle, shutdown, restart, and process supervision
+- generation-bound authority and stale-state fencing
+- multi-process and framed-network runtimes
+- replayable observability and decision reconstruction
+- resource, cost, efficiency, utilization, and energy accounting
+- policy-bounded execution
+- formal assurance and runtime governance
 
 ## Runtime Governance
 
@@ -162,30 +274,3 @@ Core systems:
 - [ABLE — Authority-Bound Liability Engine](https://github.com/pngen/able)
 
 AGIOS extends that foundation into broader runtime governance for general intelligence and institutional deployment.
-
-## Accelerated Systems Engineering
-
-Primary areas of work include:
-
-- heterogeneous accelerator memory
-- reusable computational state
-- distributed AI state
-- inference scheduling and serving
-- CUDA and accelerator integration
-- compilation and executable artifacts
-- kernel and execution-graph reuse
-- execution placement and dispatch
-- data movement and transfer
-- topology and locality
-- memory pressure and resource governance
-- admission and quota control
-- latency and bandwidth governance
-- persistence and crash recovery
-- replica lifecycle and failover
-- distributed authority and fencing
-- deterministic lifecycle and shutdown
-- integrity and resource accounting
-- multi-process and framed-network runtimes
-- replayable observability
-- policy-bounded execution
-- formal assurance
