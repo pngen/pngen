@@ -16,10 +16,6 @@ The architecture separates these concerns so that every transition can be govern
 
 [Accelerated Systems Infrastructure](accelerators.md) is the open-source accelerated-computing substrate from Summon Software Labs: a cumulative corpus of narrowly scoped runtimes spanning accelerator memory and reusable state through inference serving, execution, communication, storage, infrastructure composition, autonomous systems, federation, coherence, and runtime evolution.
 
-## Distributed Fabric Infrastructure
-
-[Distributed Fabric Infrastructure](fabrics.md) is an open-source systems program from Summon Software Labs focused on programmable, distributed fabric infrastructure. Its architecture will be published incrementally as individual runtime boundaries are released.
-
 ## Runtime Governance
 
 [Runtime Governance](runtime-governance.md) covers AIGOS, the open-source AI Governance Operating System foundation beneath AGIOS, and the AIGOS supervisor daemon aigosd: deterministic, policy-bounded, auditable runtime control over intelligence execution, including authority, jurisdiction, cost attribution, formal assurance, and liability.
