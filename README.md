@@ -18,13 +18,13 @@ The [Open Source Data Center Model](https://github.com/summonlabs) is a 286-repo
 
 It is organized into three cumulative infrastructure layers:
 
-- **Accelerated Systems Infrastructure (ASI) — 112 repositories**  
+- **[Accelerated Systems Infrastructure (ASI) — 112 repositories](https://github.com/summonlabs/.github/blob/main/profile/accelerators.md)**  
   Accelerator memory, reusable state, execution, scheduling, inference serving, communication, storage, compilation, virtualization, persistent execution, autonomous systems, federation, coherence, fault containment, cross-cluster state, runtime evolution, and hardware capability truth.
 
-- **Distributed Fabric Infrastructure (DFI) — 102 repositories**  
+- **[Distributed Fabric Infrastructure (DFI) — 102 repositories](https://github.com/summonlabs/.github/blob/main/profile/fabrics.md)**  
   Fabric identity, topology, routing, traffic engineering, congestion, collectives, AI-aware communication, failure and recovery, lifecycle control, observability, NIC/SmartNIC/DPU offload, physical and optical infrastructure, rack and site composition, inter-site authority, and federation.
 
-- **Data Center Control Plane (DCCP) — 72 repositories**  
+- **[Data Center Control Plane (DCCP) — 72 repositories](https://github.com/summonlabs/.github/blob/main/profile/data-center.md)**  
   Rack and facility state, capacity, placement, electrical infrastructure, thermal and cooling control, hardware lifecycle, tenancy, policy, storage/control integration, failure recovery, observability, economics, regional brokering, federation, and multi-site operation.
 
 **Browse the public corpus:**  
@@ -50,9 +50,9 @@ Validation is evidence-driven:
 
 Applicable accelerator paths have been validated on real NVIDIA RTX 5090 / CUDA hardware, with REAL, SYNTHETIC, and UNSUPPORTED evidence explicitly separated.
 
-### Runtime Execution Governance
+### [Runtime Execution Governance](https://github.com/summonlabs/.github/blob/main/profile/execution-governance.md)
 
-[Runtime Execution Governance](execution-governance.md) covers AIGOS, the open-source AI Governance Operating System foundation beneath AGIOS, and the AIGOS supervisor daemon `aigosd`.
+Runtime Execution Governance covers AIGOS, the open-source AI Governance Operating System foundation beneath AGIOS, and the AIGOS supervisor daemon `aigosd`.
 
 AIGOS provides deterministic, policy-bounded, auditable runtime control over intelligence execution, including authority, jurisdiction, cost attribution, formal assurance, lifecycle, and liability.
 
